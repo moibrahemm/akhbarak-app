@@ -9,8 +9,8 @@ Akhbarak is a simple and responsive Arabic news application built using **Flutte
 
 ## 📱 Screenshots
 
-| Home Screen | Category View | WebView 1 | WebView 2 |
-|-------------|---------------|-----------|-----------|
+| Home Screen | Category View (Sports Category) | WebView 1 | WebView 2 |
+|-------------|---------------------------------|-----------|-----------|
 | ![Home](assets/screenshots/home_screen.png) | ![Category](assets/screenshots/category_view.png) | ![WebView1](assets/screenshots/webview1.png) | ![WebView2](assets/screenshots/webview2.png) |
 
 ---
