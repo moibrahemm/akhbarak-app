@@ -41,7 +41,7 @@ class CategoryCard extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: context.height * 0.027,
+                fontSize: context.height * 0.025,
               ),
             ),
           ),
