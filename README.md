@@ -26,13 +26,16 @@ Akhbarak is a simple and responsive Arabic news application built using **Flutte
 - ✅ **Error handling:** empty state if no articles found or network fails
 - ✅ **WebView Integration:** Read full articles inside the app
 - ✅ **Navigation between home, category, and article view**
+- ✅ **State Management using BLoC (Cubit)** for consistent and scalable app state
 
 ---
 
 ## 📦 Packages Used
 
+- [`flutter_bloc`](https://pub.dev/packages/flutter_bloc) – for state management  
 - [`dio`](https://pub.dev/packages/dio) – for HTTP requests  
 - [`webview_flutter`](https://pub.dev/packages/webview_flutter) – for displaying articles  
+- [`pull_to_refresh_flutter3`](https://pub.dev/packages/pull_to_refresh_flutter3) – for pull-to-refresh support  
 
 ---
 
@@ -40,6 +43,10 @@ Akhbarak is a simple and responsive Arabic news application built using **Flutte
 
 ```
 lib/
+├── cubits/
+│   └── news_cubit/
+│       ├── news_cubit.dart
+│       └── news_state.dart
 ├── models/
 │   ├── article_model.dart
 │   └── category_model.dart
@@ -50,7 +57,6 @@ lib/
 │   ├── categories_list.dart
 │   ├── news_tile.dart
 │   ├── news_list.dart
-│   ├── news_list_builder.dart
 │   ├── news_appbar.dart
 │   └── news_web_view.dart
 ├── screens/
