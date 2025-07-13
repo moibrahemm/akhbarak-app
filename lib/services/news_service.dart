@@ -7,19 +7,15 @@ class NewsService {
 
   NewsService();
   Future<List<ArticleModel>> getNews({required String category}) async {
-    try {
-      final Response response = await dio.get(
-        'https://gnews.io/api/v4/top-headlines?category=$category&country=eg&lang=ar&apikey=$apikey',
-      );
-      final Map<String, dynamic> jsonData = response.data;
-      final List<ArticleModel> articlesList = List<ArticleModel>.from(
-        (jsonData['articles'] as List).map(
-          (article) => ArticleModel.fromJson(article),
-        ),
-      );
-      return articlesList;
-    } catch (e) {
-      return [];
-    }
+    final Response response = await dio.get(
+      'https://gnews.io/api/v4/top-headlines?category=$category&country=eg&lang=ar&apikey=$apikey',
+    );
+    final Map<String, dynamic> jsonData = response.data;
+    final List<ArticleModel> articlesList = List<ArticleModel>.from(
+      (jsonData['articles'] as List).map(
+        (article) => ArticleModel.fromJson(article),
+      ),
+    );
+    return articlesList;
   }
 }

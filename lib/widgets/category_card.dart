@@ -3,10 +3,15 @@ import 'package:akhbarak_app/models/category_model.dart';
 import 'package:akhbarak_app/screens/category_view.dart';
 import 'package:flutter/material.dart';
 
-class CategoryCard extends StatelessWidget {
+class CategoryCard extends StatefulWidget {
   const CategoryCard({super.key, required this.category});
   final CategoryModel category;
 
+  @override
+  State<CategoryCard> createState() => _CategoryCardState();
+}
+
+class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,7 +20,7 @@ class CategoryCard extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) {
               return CategoryView(
-                category: category.categoryName.toLowerCase(),
+                category: widget.category.categoryName.toLowerCase(),
               );
             },
           ),
@@ -29,7 +34,7 @@ class CategoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.0),
           image: DecorationImage(
             opacity: 0.85,
-            image: AssetImage(category.imageUrl),
+            image: AssetImage(widget.category.imageUrl),
             fit: BoxFit.fill,
           ),
         ),
@@ -37,7 +42,7 @@ class CategoryCard extends StatelessWidget {
           child: FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              category.categoryName,
+              widget.category.categoryName,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
